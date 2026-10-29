@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <!-- Este meta hace que la página se adapte al ancho del celular -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panel de Gestión de Usuarios</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <header>
+    <h1>Panel de Gestión de Usuarios</h1>
+  </header>
+
+  <main>
+    <!-- Aquí se muestran los mensajes: cargando, errores y confirmaciones -->
+    <p id="mensaje" class="mensaje"></p>
+
+    <section class="tarjeta">
+      <h2 id="tituloFormulario">Registrar usuario</h2>
+      <form id="formulario">
+        <div class="campo">
+          <label for="id">ID</label>
+          <input type="text" id="id" placeholder="Ej: 11">
+        </div>
+        <div class="campo">
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" placeholder="Nombre completo">
+        </div>
+        <div class="campo">
+          <label for="correo">Correo</label>
+          <input type="text" id="correo" placeholder="correo@ejemplo.com">
+        </div>
+        <div class="campo">
+          <label for="ciudad">Ciudad</label>
+          <input type="text" id="ciudad" placeholder="Ciudad">
+        </div>
+        <div class="botones">
+          <button type="submit" id="botonEnviar">Agregar</button>
+          <button type="button" id="botonCancelar" class="secundario oculto">Cancelar</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="tarjeta">
+      <h2>Usuarios</h2>
+      <label for="buscador">Buscar por nombre</label>
+      <input type="text" id="buscador" placeholder="Escribe un nombre...">
+
+      <!-- Este contenedor permite que la tabla se desplace sola en celular -->
+      <div class="tabla-contenedor">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nombre</th>
+              <th>Correo</th>
+              <th>Ciudad</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="cuerpoTabla"></tbody>
+        </table>
+      </div>
+
+      <p id="resumenCiudades" class="resumen"></p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
